@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3">
+              <mat-card>
+                <div class="container text-center">
+                    <img src="../../../assets/register.png" alt="">
+                </div>
+                <h1 class="text-center">Register Here !!</h1>
+                    <form >
+
+                      
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input required  name="uName" matInput placeholder="firstname*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input required  name="uSurname" matInput placeholder="lastname*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>UserName</mat-label>
+                            <input required  name="uUserName" matInput placeholder="UserName*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input required name="uEmail" type="email" matInput placeholder="email*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Create Password</mat-label>
+                            <input required  name="uPass" type="password" matInput placeholder="password*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input required type="tel"  name="uPhone" matInput placeholder="Phone number*">
+                            <mat-icon matSuffix>phone</mat-icon>
+                            <mat-hint>please include your area code</mat-hint>                            
+                        </mat-form-field>
+                        
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" >Register</button>
+                            <button type="reset" mat-raised-button color="accent" style="margin-left: 20px;">clear</button>
+
+                        </div>
+
+
+                    </form>
+                </mat-card>
+        </div>
+    </div>
+</div>
+<footer></footer>
