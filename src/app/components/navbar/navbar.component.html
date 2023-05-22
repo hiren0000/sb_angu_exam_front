@@ -1,1 +1,11 @@
-<p>this is Navbar</p>
+<p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span><a [routerLink]="['']">Exam-Portal</a></span>
+      <span class="example-spacer"></span>
+      <button mat-stroked-button color="black"><a [routerLink]="['signup']">Singup</a></button>
+      <button mat-stroked-button color="accent"><a [routerLink]="['login']">Login</a> </button>
+    </mat-toolbar>
+  </p>

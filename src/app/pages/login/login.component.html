@@ -1,1 +1,42 @@
-<p>login works!</p>
+<app-navbar></app-navbar>
+<div class="container" style="margin-top: 20px;">
+   
+          <mat-card >
+                <div class="container text-center">
+                    <!--<img src="../../../assets/register.png" alt=""> -->
+                </div>
+                <h1 class="text-center">Login</h1>
+                <!--{{user | json }}   -->
+                
+<!---------------------------LogIn Form-------------------------------------------------------------------------->
+           
+
+                <form >
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input required  name="userName" matInput placeholder="UserName*">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input required type="password" name="password" matInput placeholder="Password*">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                    </mat-form-field>
+
+                                      
+                    
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" >Login</button>
+                        <button type="reset" mat-raised-button color="accent" style="margin-left: 20px;">clear</button>
+
+                    </div>
+
+
+                </form>
+            </mat-card>
+            </div>
+  
+<br>
+<footer></footer>
