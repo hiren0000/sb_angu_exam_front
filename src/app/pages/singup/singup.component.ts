@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-singup',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingupComponent implements OnInit {
 
-  constructor () {}
+  constructor (private userService:UserService) {}
 
   public user={
     userName: '',
@@ -25,7 +26,29 @@ export class SingupComponent implements OnInit {
 
   registration()
   {
-    alert('pls be care once u submit this file then no revert option ');
+    //validations
+    if(this.user.userName == '' || this.user.userName == null)
+    {
+      alert('User is required !!');
+      return;
+    }
+
+    // add User : userService
+
+    this.userService.regiserUser(this.user).subscribe({
+      next: response => 
+      {
+        console.log(response);
+        alert('successfully added ')
+      },
+      error :error => 
+      {
+        console.log(error);
+        alert('something went wrong ')
+      }
+    });
+    
+
   }
 
 

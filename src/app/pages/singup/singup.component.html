@@ -1,17 +1,19 @@
 <app-navbar></app-navbar>
-<div class="bootstrap-wrapper">
+
     <div class="container">
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-6 offset-md-3">
               <mat-card>
-                <div class="container text-center">
-                    <img src="../../../assets/register.png" alt="">
-                </div>
-                <h1 class="text-center">Register Here !!</h1>
-                {{user | json }}   
-                
+                    <div class="container text-center">
+                        <img src="../../../assets/register.png" alt="">
+                    </div>
+                    <h1 class="text-center">Register Here !!</h1>
+                    {{user | json }}   
+                    
 <!---------------------------Registration Form-------------------------------------------------------------------------->
-                <form (ngSubmit)="registration()">
+               
+
+                    <form (ngSubmit)="registration()">
 
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>UserName</mat-label>
@@ -68,5 +70,5 @@
                 </mat-card>
         </div>
     </div>
-</div>
+<br>
 <footer></footer>
