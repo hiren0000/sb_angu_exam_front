@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-singup',
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SingupComponent implements OnInit {
 
-  constructor (private userService:UserService) {}
+  constructor (private userService:UserService, private snack:MatSnackBar) {}
 
   public user={
     userName: '',
@@ -29,7 +31,8 @@ export class SingupComponent implements OnInit {
     //validations
     if(this.user.userName == '' || this.user.userName == null)
     {
-      alert('User is required !!');
+      //alert('User is required !!');
+      this.snack.open("UserName is required !!","ok");
       return;
     }
 
@@ -39,12 +42,13 @@ export class SingupComponent implements OnInit {
       next: response => 
       {
         console.log(response);
-        alert('successfully added ')
+        //alert('successfully added ')
+        Swal.fire('Success', 'User is successfully added', 'success');
       },
       error :error => 
       {
         console.log(error);
-        alert('something went wrong ')
+        Swal.fire('Error', 'Something went wrong !!!', 'error');
       }
     });
     
