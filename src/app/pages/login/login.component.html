@@ -11,17 +11,19 @@
 <!---------------------------LogIn Form-------------------------------------------------------------------------->
            
 
-                <form >
+                {{ loginData | json }}
+
+                <form (ngSubmit)="loginForm()">
 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>UserName</mat-label>
-                        <input required  name="userName" matInput placeholder="UserName*">
+                        <input required [(ngModel)]="loginData.userName" type="text" name="userName" matInput placeholder="UserName*">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     </mat-form-field>
 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input required type="password" name="password" matInput placeholder="Password*">
+                        <input required [(ngModel)]="loginData.password" type="password" name="password" matInput placeholder="Password*">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
                     </mat-form-field>
 

@@ -17,4 +17,6 @@ public regiserUser(user:any)
   return this.http.post(`${baseUrl}/api/v1/users/`, user);
 }
 
+
+
 }
