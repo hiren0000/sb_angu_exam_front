@@ -12,7 +12,7 @@ export class LoginService {
   //get current user
   public getCurrentUser()
   {
-    return this.http.get(`${baseUrl}/api/v1/auth/current-user `);
+    return this.http.get(`${baseUrl}/api/v1/auth/current-user`);
   }
 
 
@@ -22,18 +22,18 @@ export class LoginService {
     return this.http.post(`${baseUrl}/api/v1/auth/generate-token`, loginData);
   }
 
-  /*
+  
   //login user :: set token into the localstorage
-  public loginUser(token: any)
+  public loginUser(token:any)
   {
-    localStorage.setItem("token", token);
+    localStorage.setItem('token', token);
     return true;
   }
 
   //is User logged in or not 
   public isLoggedIn()
   {
-    let tokenStr = localStorage.getItem("token")
+    let tokenStr = localStorage.getItem('token')
     if(tokenStr == undefined || tokenStr == '' || tokenStr == null)
     {
     return false; 
@@ -47,7 +47,7 @@ export class LoginService {
   //logout: remove Jwt from local storage
   public logout()
   {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
     return true;
 
   }
@@ -55,13 +55,13 @@ export class LoginService {
   //get token from local storage
   public getToken()
   {
-    localStorage.getItem("token");
+    return localStorage.getItem('token');
   }
 
   //setting user details locally
   public setUser(user:any)
   {
-    localStorage.setItem('user', JSON.stringify(user));
+    return localStorage.setItem('user', JSON.stringify(user));
 
   }
 
@@ -85,5 +85,5 @@ export class LoginService {
   {
     let user = this.getUser()
     return user.authorities[0].authority;
-  }*/
+  }
 }

@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
       next: (data:any) => 
       {
         console.log(data);
-        //alert('successfully added ')
-        //Swal.fire('Success', 'User is logged in ', 'success');
-
-        //after getting token into data variable
-      /*   this.loginService.loginUser(data.token);
-
+       
+    //after getting token into data.token variable
+       this.loginService.loginUser(data.token);
+        
+       
+    //geeting current user by providing access token
        this.loginService.getCurrentUser().subscribe({
           next: (user:any) =>
           {
@@ -59,9 +59,15 @@ export class LoginComponent implements OnInit {
 
 
             //Redirect to the Normal User Dashboard
+          },
+          error : (error) =>
+          {
+            console.log(error);
+            Swal.fire('Error', 'Something went wrong !!!', 'error');
+
           }
 
-         })*/
+         });
 
 
       },

@@ -17,7 +17,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { authInterceptorProviders } from './services/auth.interceptor';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MatSnackBarModule],
+  providers: [MatSnackBarModule, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
