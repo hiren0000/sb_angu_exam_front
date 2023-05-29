@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   };
 
-  constructor(private snack:MatSnackBar, private loginService:LoginService) {}
+  constructor(private snack:MatSnackBar, private loginService:LoginService, private router:Router) {}
 
 
   ngOnInit(): void {  }
@@ -56,9 +56,24 @@ export class LoginComponent implements OnInit {
             this.loginService.setUser(user);
             console.log(user);
             //redirect to the ADMIN Dashboard
-
-
+            if(this.loginService.getUserRole() == 'ADMIN')
+            {
+              //ADMIN-DASH
+             // window.location.href='/admin-dash'
+             this.router.navigate(['admin-dash']);
+            }
             //Redirect to the Normal User Dashboard
+            else if(this.loginService.getUserRole() == 'NORMAL')
+            {
+              //NORMAL-DASH
+              //window.location.href='/user-dashboard'
+              this.router.navigate(['user-dashboard']);
+            }
+            else
+            {
+              this.loginService.logout();
+              location.reload();
+            }
           },
           error : (error) =>
           {

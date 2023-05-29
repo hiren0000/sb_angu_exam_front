@@ -5,7 +5,9 @@
       </button>
       <span><a [routerLink]="['']">Exam-Portal</a></span>
       <span class="example-spacer"></span>
-      <button mat-stroked-button color="black"><a [routerLink]="['signup']">Singup</a></button>
-      <button mat-stroked-button color="accent"><a [routerLink]="['login']">Login</a> </button>
+      <button  mat-flat-button color="pink" *ngIf="!loginServ.isLoggedIn()"><a [routerLink]="['signup']">Singup</a></button>
+      <button  mat-flat-button color="pink" *ngIf="!loginServ.isLoggedIn()"><a [routerLink]="['login']">Login</a></button>
+      <button mat-flat-button color="pink"  (click)="logout()" *ngIf="loginServ.isLoggedIn()">Logout</button>
+      <button mat-flat-button color="pink" *ngIf="loginServ.isLoggedIn()">{{loginServ.getUser().firstName}}</button>
     </mat-toolbar>
   </p>

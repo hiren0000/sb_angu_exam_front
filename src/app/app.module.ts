@@ -19,6 +19,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './pages/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProviders } from './services/auth.interceptor';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     FooterComponent,
     LoginComponent,
     SingupComponent,
-    HomeComponent
+    HomeComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
