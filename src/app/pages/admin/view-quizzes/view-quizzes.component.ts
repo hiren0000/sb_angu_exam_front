@@ -31,7 +31,7 @@ export class ViewQuizzesComponent implements OnInit {
 
   ngOnInit(): void {
       
-    //getting list of Quzzies
+//Fetching list of Quzzies
     this.quizSer.getListQuizzes().subscribe({
       next: (data:any)=>
       {
@@ -47,6 +47,41 @@ export class ViewQuizzesComponent implements OnInit {
     });
 
 
+  }
+
+//Deleting single quiz by quiz id: after giving confirmaton
+  public deleteQui(qId:any)
+  {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Are you sure???',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result)=>
+    {
+
+//calling delete function
+    if(result.isConfirmed)
+    {
+      this.quizSer.deleteQuiz(qId).subscribe({
+        next: (data:any)=>
+        { 
+          this.quizzes = this.quizzes.filter((quiz) => quiz.qId != qId)
+          Swal.fire('Success', 'Quiz successfully deleted !!', 'success');
+        },
+        error: (error)=>
+        {
+          console.log(error);
+          Swal.fire('Error', 'Something went wrong !! ', 'error');
+  
+        }
+      });
+    }
+
+
+    });
+
+   
   }
 
 

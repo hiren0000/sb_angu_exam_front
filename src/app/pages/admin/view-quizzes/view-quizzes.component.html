@@ -14,6 +14,7 @@
         <button mat-stroked-button color="warn" class="ml10">Questions: {{q.numberOfQuestions}}</button>
         <button mat-raised-button color="primary" class="ml10" >Update</button>
         <button mat-raised-button color="primary" class="ml10">Attempts</button>
+        <button mat-raised-button color="warn" class="ml10" (click)="deleteQui(q.qId)">Delete</button>
        
     </mat-card-actions>
 

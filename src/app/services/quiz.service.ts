@@ -20,4 +20,10 @@ export class QuizService {
   {
     return this.http.post(`${baseUrl}/api/v1/quiz/` ,quiz);
   }
+
+  //Deleting quiz by id
+  public deleteQuiz(qId:any)
+  {
+    return this.http.delete(`${baseUrl}/api/v1/quiz/${qId}`);
+  }
 }
