@@ -14,38 +14,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 100%;
 }
 
-.ml-20px{
-    left: 20px;
+.ml20{
+    margin-left: 20px;
 }
 
-ml-20px{
-    left: 20px;
+.mr20{
+    margin-right: 20px;
 }
 
-.mr-20px{
-    right: 20px;
+.mt20{
+    margin-top: 20px;
 }
 
-.mt-20px{
-    top: 20px;
+.mb20{
+    margin-bottom: 20px;
 }
 
-.mb-20px{
-    left: 20px;
+.ml10{
+    margin-left: 10px;
 }
 
-.ml-10px{
-    left: 10px;
+.mr10{
+    margin-right: 10px;
 }
 
-.mr-10px{
-    right: 20px;
+.mt10{
+    margin-top: 10px;
 }
 
-.mt-10px{
-    top: 20px;
-}
-
-.mb-10px{
-    bottom: 20px;
+.mb10{
+    margin-bottom: 10px;
 }
