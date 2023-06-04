@@ -1,0 +1,72 @@
+<mat-card>
+    <h1 class="text-center">Update Quiz</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                   <!-- {{quizData | json}} -->
+    <!-------------------------------------------------------------------------------------------------------------->           
+                 <form *ngIf="quizData" (ngSubmit)="updateQuizForm()">
+    
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input required [(ngModel)]="quizData.title"  type="text" name="title" matInput placeholder="Quiz Title*">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+    
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea required [(ngModel)]="quizData.description" name="decription" matInput placeholder="Quiz Description*" rows="5"></textarea> 
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                    </mat-form-field>
+
+                    <div class="row">
+                     <div class="col-md-6">
+                     <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>MaxMarks</mat-label>
+                        <input required [(ngModel)]="quizData.maxMarks"  type="number" name="maxMarks" matInput placeholder="Quiz Maximum marks*">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                     </mat-form-field>
+                     </div>
+
+                     <div class="col-md-6">
+                     <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Number of Questions</mat-label>
+                        <input required [(ngModel)]="quizData.numberOfQuestions"  type="number" name="numberOfQuestions" matInput placeholder="Number of Questions*">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                     </mat-form-field>
+                     </div>
+                    </div>
+
+                   <!-- acitve field-->
+                    <mat-slide-toggle name="active" class="example-margin"[(ngModel)]="quizData.active">
+                        Quiz Satus!
+                    </mat-slide-toggle>
+
+                    <br />
+
+                    <mat-form-field appearance="fill" class="full-width mt20">
+                        <mat-label>Categories</mat-label>
+                        <mat-select name='category' required [(ngModel)]="quizData.category.cId">
+                          <mat-option *ngFor="let cat of categories" [value]="cat.cId">
+                            {{cat.title}}
+                          </mat-option>
+                        </mat-select>               
+                     </mat-form-field>
+    
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" >Update-Quiz</button>
+                        <button type="reset" mat-raised-button color="accent" style="margin-left: 20px;">Reset</button>
+    
+                    </div>
+    
+    
+                </form>
+    </div>
+     </div>
+    </div>
+    
+    </mat-card-content>
+    
+    
+    </mat-card>
