@@ -66,6 +66,7 @@ export class ViewQuizzesComponent implements OnInit {
       this.quizSer.deleteQuiz(qId).subscribe({
         next: (data:any)=>
         { 
+    //below function will help page to do the filter and get the accurate data after deletation 
           this.quizzes = this.quizzes.filter((quiz) => quiz.qId != qId)
           Swal.fire('Success', 'Quiz successfully deleted !!', 'success');
         },
