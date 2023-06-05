@@ -19,5 +19,11 @@ public getQuestbyQuiz(qId:any)
 public addNewQuestion(question:any)
 {
   return this.http.post(`${baseUrl}/api/v1/question/`, question);
-} 
+}
+
+//Delete question by questionId
+public deleteQuestionById(quesId:any)
+{
+  return this.http.delete(`${baseUrl}/api/v1/question/${quesId}`);
+}
 }

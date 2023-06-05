@@ -15,6 +15,7 @@ export class ViewQuestionsComponent implements OnInit {
   questions = [
 
     {
+      quesId: '',
       content: '',
       image: '',
       option1: '',
@@ -39,7 +40,7 @@ export class ViewQuestionsComponent implements OnInit {
     this.qId =this.route.snapshot.params[('qId')];
     this.title = this.route.snapshot.params[('title')];
 
-//Fetching Questions by Quiz Id
+//Fetching Questions by Quiz Id-----------------------------------------------------------------------------------------
     this.questionSer.getQuestbyQuiz(this.qId).subscribe({
       next: (data:any)=>
       {
@@ -52,8 +53,47 @@ export class ViewQuestionsComponent implements OnInit {
         Swal.fire('Error', 'Somethign went wrong !!', 'error');
       }
     });
+  }
     
+
+//Deleting Question by id-------------------------------------------------------------------------------------------
+
+    public deleteQuestion(quesId:any)
+    {
+      // Using swal object here to confirm from Admin, they r sure to delete this question
+      Swal.fire({
+        icon: 'warning',
+        title: 'Are you sure you want to delete???',
+        confirmButtonText: 'Delete',
+        showCancelButton: true,
+      }).then((result)=>
+      {
+  
+  //calling delete function
+      if(result.isConfirmed)
+      {
+        this.questionSer.deleteQuestionById(quesId).subscribe({
+          next: (data:any)=>
+          { 
+            console.log(data);
+            
+      //below function will help page to do the filter and get the accurate data after deletation 
+            this.questions = this.questions.filter((question) => question.quesId != quesId)
+            Swal.fire('Success', 'Quiz successfully deleted !!', 'success');
+          },
+          error: (error)=>
+          {
+            console.log(error);
+            Swal.fire('Error', 'Something went wrong !! ', 'error');
+    
+          }
+        });
+      }
+
+    });
     
       
-  }
+   }
 }
+
+

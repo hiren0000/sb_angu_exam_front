@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="container text-center">
-                <button [routerLink]="'/admin-dash/add-question/'+qId+'/'+title" mat-raised-button>Add-question</button>
+                <button [routerLink]="'/admin-dash/add-question/'+qId+'/'+title" mat-fab extended color="primary"><mat-icon>add</mat-icon>Add-question</button>
             </div>
             <mat-card *ngFor="let q of questions; let i = index" class="mt10">
                 <mat-card-content>
@@ -28,10 +28,16 @@
                                 <p><b>4)</b> {{q.option4}}</p>
                             </div>
                         </div>
-                       <mat-divider></mat-divider>
-                       <p class="mt20"><b>Correct Answer:</b>{{q.answer}}</p>
+                       <mat-divider>                    
+                    </mat-divider>
+                    <p style="margin-top: 10px;"><b>Correct Answer:</b>{{q.answer}}</p>
                     </div>
                 </mat-card-content>
+
+                <mat-card-actions class="mt10">
+                    <button mat-fab color="warn" (click)="deleteQuestion(q.quesId)"><mat-icon>delete</mat-icon></button>
+                    <button  mat-fab color="primary"><mat-icon>update</mat-icon></button>
+                </mat-card-actions>
             </mat-card>
         </div>
     </div>

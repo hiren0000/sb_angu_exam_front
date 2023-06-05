@@ -42,6 +42,8 @@ export class AddQuestionComponent implements OnInit {
       
   }
 
+
+//Adding New Question for specific Quiz 
   public addNewQuesti()
   {
   
