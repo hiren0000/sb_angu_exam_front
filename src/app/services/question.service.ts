@@ -14,4 +14,10 @@ public getQuestbyQuiz(qId:any)
 {
   return this.http.get(`${baseUrl}/api/v1/question/quiz/all/${qId}`);
 }
+
+//Add new question to the specific quiz
+public addNewQuestion(question:any)
+{
+  return this.http.post(`${baseUrl}/api/v1/question/`, question);
+} 
 }

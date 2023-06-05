@@ -2,6 +2,9 @@
 <div class="bootstrap-wrapper">
     <div class="row">
         <div class="col-md-12">
+            <div class="container text-center">
+                <button [routerLink]="'/admin-dash/add-question/'+qId+'/'+title" mat-raised-button>Add-question</button>
+            </div>
             <mat-card *ngFor="let q of questions; let i = index" class="mt10">
                 <mat-card-content>
                     <p><b>Q {{i+1}} )</b> <span class="ml10" [innerHTML]="q.content"></span></p>
