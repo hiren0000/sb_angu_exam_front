@@ -18,6 +18,7 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 
 
 const routes: Routes = [
@@ -92,10 +93,17 @@ const routes: Routes = [
 },
 
 {
-  path: 'user-dashboard',
+  path: 'user-dash',
   component: UserDashboardComponent,
-  pathMatch: 'full',
   canActivate: [NormalGuard],
+  children : [
+    {
+      path: ':cId',
+      component: LoadQuizComponent,
+
+    },
+  ],
+
 }
 
 
