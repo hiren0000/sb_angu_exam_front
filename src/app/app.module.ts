@@ -36,11 +36,18 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+
+
 
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 
 
@@ -64,7 +71,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateQuizComponent,
     ViewQuestionsComponent,
     AddQuestionComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    SidebarUserComponent,
+    LoadQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,8 +91,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatSidenavModule,
     MatListModule,
     MatSlideToggleModule,
-    MatSelectModule,
-    CKEditorModule
+    MatSelectModule, 
+    CKEditorModule,
+
   ],
   providers: [MatSnackBarModule, authInterceptorProviders],
   bootstrap: [AppComponent]
