@@ -26,4 +26,16 @@ public deleteQuestionById(quesId:any)
 {
   return this.http.delete(`${baseUrl}/api/v1/question/${quesId}`);
 }
+
+//Update question 
+public updateQuestion(question:any)
+{
+  return this.http.put(`${baseUrl}/api/v1/question/`, question);
+}
+
+//get single question by id
+public getSingleQuestion(quesId:any)
+{
+  return this.http.get(`${baseUrl}/api/v1/question/${quesId}`);
+}
 }
