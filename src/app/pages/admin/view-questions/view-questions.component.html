@@ -36,7 +36,7 @@
 
                 <mat-card-actions class="mt10">
                     <button mat-fab color="warn" (click)="deleteQuestion(q.quesId)"><mat-icon>delete</mat-icon></button>
-                    <button  mat-fab color="primary"><mat-icon>update</mat-icon></button>
+                    <button  mat-fab color="primary" [routerLink]="'/admin-dash/update-question/'+q.quesId" ><mat-icon>update</mat-icon></button>
                 </mat-card-actions>
             </mat-card>
         </div>

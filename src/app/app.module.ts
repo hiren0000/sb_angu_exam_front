@@ -35,6 +35,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+<<<<<<< Updated upstream
+=======
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -56,7 +61,8 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
     AddQuizComponent,
     UpdateQuizComponent,
     ViewQuestionsComponent,
-    AddQuestionComponent
+    AddQuestionComponent,
+    UpdateQuestionComponent
   ],
   imports: [
     BrowserModule,
