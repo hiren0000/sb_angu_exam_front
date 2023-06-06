@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
@@ -10,6 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class AddQuestionComponent implements OnInit {
   
+ public Editor = ClassicEditor;
+
   qId= '';
   title='';
 
