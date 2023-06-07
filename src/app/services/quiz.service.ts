@@ -45,4 +45,17 @@ export class QuizService {
     return this.http.get(`${baseUrl}/api/v1/quiz/category/${cId}`)
   }
 
+  //Get only active quizzes
+  public getAllActiveQuizzes()
+  {
+    return this.http.get(`${baseUrl}/api/v1/quiz/active`);
+
+  }
+
+  //Get list of active quizzes by category
+  public getAllActiveQuizzesByCat(cId:any)
+  {
+    return this.http.get(`${baseUrl}/api/v1/quiz/category/active/${cId}`);
+  }
+
 }

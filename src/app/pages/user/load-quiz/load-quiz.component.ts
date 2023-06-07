@@ -40,7 +40,7 @@ export class LoadQuizComponent implements OnInit {
       {
         //console.log("show all quiz");
 //--------------Getting All the List of Quizzes------------------------------------------------------------------------------     
-        this.quizSer.getListQuizzes().subscribe({
+        this.quizSer.getAllActiveQuizzes().subscribe({
           next: (data:any)=>
           {
             this.quizzes = data;
@@ -56,7 +56,7 @@ export class LoadQuizComponent implements OnInit {
       {
         console.log('show specific quiz by category ');
         //this.quizzes=[];
-        this.quizSer.getAllQuizByCat(this.cid).subscribe({
+        this.quizSer.getAllActiveQuizzesByCat(this.cid).subscribe({
           next: (data:any)=>
           {
             this.quizzes = data;
