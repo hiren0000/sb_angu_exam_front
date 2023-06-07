@@ -35,18 +35,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewQuestionsComponent } from './pages/admin/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
-
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
-
-
-
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
-
-
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 
 
 
@@ -74,7 +67,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateQuestionComponent,
     SidebarUserComponent,
     LoadQuizComponent,
+    InstructionsComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
