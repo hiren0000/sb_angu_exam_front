@@ -38,4 +38,11 @@ export class QuizService {
   {
     return this.http.delete(`${baseUrl}/api/v1/quiz/${qId}`);
   }
+
+  //get list of quizzes by category
+  public getAllQuizByCat(cId:any)
+  {
+    return this.http.get(`${baseUrl}/api/v1/quiz/category/${cId}`)
+  }
+
 }

@@ -26,6 +26,14 @@
                 </mat-card>
 
             </div>
+            <!--Here this message will reflect only when category does not have any quiz -->
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-content *ngIf="quizzes.length == 0">
+                        <h1>There is no quizzes in this category</h1>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>

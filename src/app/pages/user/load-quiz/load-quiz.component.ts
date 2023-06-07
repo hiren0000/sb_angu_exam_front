@@ -31,8 +31,11 @@ export class LoadQuizComponent implements OnInit {
 
   ngOnInit(): void 
   {
-      this.cid = this.route.snapshot.params['cId'];
+     this.route.params.subscribe((params)=>
+     {
+      this.cid = params['cId'];
 
+      
       if(this.cid == '0')
       {
         //console.log("show all quiz");
@@ -51,9 +54,28 @@ export class LoadQuizComponent implements OnInit {
         
       }else
       {
-        console.log('show specific quiz ');
+        console.log('show specific quiz by category ');
+        //this.quizzes=[];
+        this.quizSer.getAllQuizByCat(this.cid).subscribe({
+          next: (data:any)=>
+          {
+            this.quizzes = data;
+            console.log(this.quizzes);
+            
+          },
+          error: (error)=>
+          {
+            console.log(error);
+            Swal.fire('Error', 'Something went wrong  !! ', 'error');
+            
+          }
+        });
        
         
       }
+
+     })
+     
+
   }
 }
