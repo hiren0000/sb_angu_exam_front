@@ -10,11 +10,12 @@
                     <form (ngSubmit)="addNewQuesti()">
 
             <!--   content field----->
-                    <mat-form-field class="full-width" appearance="fill">
+                  <!---  <mat-form-field class="full-width" appearance="fill">
                         <mat-label>Question Content</mat-label>
                         <textarea [(ngModel)]="question.content" required name="content" matInput placeholder="Question Content*" rows="7"></textarea> 
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <ckeditor [(ngModel)]="question.content" name="content" [editor]="Editor" data="<p>Question Content</p>"></ckeditor>
 
             <!--Options -->
                     <div class="row">
