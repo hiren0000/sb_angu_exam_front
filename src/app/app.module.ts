@@ -39,6 +39,7 @@ import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.com
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 
 
 
@@ -66,7 +67,9 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateQuestionComponent,
     SidebarUserComponent,
     LoadQuizComponent,
+    InstructionsComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
