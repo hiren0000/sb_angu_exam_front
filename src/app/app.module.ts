@@ -40,6 +40,7 @@ import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
 
 
 
@@ -68,6 +69,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
     SidebarUserComponent,
     LoadQuizComponent,
     InstructionsComponent,
+    QuizMainCompoComponent,
   ],
   
   imports: [

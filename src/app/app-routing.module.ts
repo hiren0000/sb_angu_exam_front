@@ -20,6 +20,7 @@ import { AddQuestionComponent } from './pages/admin/add-question/add-question.co
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
 
 
 const routes: Routes = [
@@ -106,10 +107,18 @@ const routes: Routes = [
     {
       path: 'quiz-instruction/:qId',
       component: InstructionsComponent,
-    }
+    },
+    
   ],
 
-}
+},
+
+//Quiz main component should be accessible directly but only when user is logged in
+{
+  path: 'quiz-main-compo/:qId',
+  component: QuizMainCompoComponent,
+  canActivate: [NormalGuard],
+},
 
 
 ];

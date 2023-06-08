@@ -1,0 +1,53 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-2">
+            <!--Instructions-->
+            <h2>Instructions</h2>
+        </div>
+        <div class="col-md-8">
+            <!--Questions-->
+            <ng-container *ngIf="questions">
+                <h1><b>{{questions[0].quiz.title}}</b></h1>
+            </ng-container>
+            <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+                <mat-card-content>
+                    <p><b>Q{{i+1}}</b>)<span class="ml10">{{q.content}}</span></p>
+                    <mat-divider></mat-divider>
+
+                    <div class="row mt10">
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option1" [name]="i+1">
+                            {{q.option1}}
+                        </div>
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option2" [name]="i+1">
+                            {{q.option2}}
+                        </div>
+                    </div>
+
+                    <div class="row mt10">
+                        <div class="col-md-6">
+                            <input type="radio" [value]="q.option3" [name]="i+1">
+                            {{q.option3}}
+                        </div>
+                        <div class="col-md-6">
+                        <input type="radio" [value]="q.option4" [name]="i+1">
+                        {{q.option4}}
+                        </div>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+
+            <div class="container text-center mt10 mb10">
+                <button mat-raised-button color="primary">Finish</button>
+            </div>
+
+        </div>
+        <div class="col-md-2">
+            <h2>Remainig Time</h2>
+        </div>
+        </div>
+    </div>
+</div>
