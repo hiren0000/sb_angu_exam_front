@@ -15,6 +15,12 @@ public getQuestbyQuiz(qId:any)
   return this.http.get(`${baseUrl}/api/v1/question/quiz/all/${qId}`);
 }
 
+//Getting number of quisions for normal user
+public getQuestbyQuizUser(qId:any)
+{
+  return this.http.get(`${baseUrl}/api/v1/question/quiz/${qId}`);
+}
+
 //Add new question to the specific quiz
 public addNewQuestion(question:any)
 {
