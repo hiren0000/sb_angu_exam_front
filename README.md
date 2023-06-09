@@ -14,17 +14,19 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-##Ang-Exa-SB
+## Ang-Exa-SB
 
 have Role based authentications,
 
-##Admin 
+## Admin 
 
 do crud operations to Cat, Quiz, Questions Models
 
 very well desgined and also implemented proper navigations
 
+## Normal-User
 
+can take a part in quiz game where needs to finis quesitons within limited time, and can get their result
 
 
 
