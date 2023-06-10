@@ -42,6 +42,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+
 
 
 
@@ -92,6 +94,39 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
     MatSelectModule, 
     CKEditorModule,
     MatProgressSpinnerModule,
+    NgxUiLoaderModule.forRoot({
+      "bgsColor": "red",
+      "bgsOpacity": 0.5,
+      "bgsPosition": "bottom-right",
+      "bgsSize": 60,
+      "bgsType": "ball-spin-clockwise",
+      "blur": 5,
+      "delay": 0,
+      "fastFadeOut": true,
+      "fgsColor": "red",
+      "fgsPosition": "center-center",
+      "fgsSize": 60,
+      "fgsType": "folding-cube",
+      "gap": 24,
+      "logoPosition": "center-center",
+      "logoSize": 70,
+      "logoUrl": "",
+      "masterLoaderId": "master",
+      "overlayBorderRadius": "0",
+      "overlayColor": "rgba(40, 40, 40, 0.8)",
+      "pbColor": "red",
+      "pbDirection": "ltr",
+      "pbThickness": 3,
+      "hasProgressBar": true,
+      "text": "please wait....",
+      "textColor": "#FFFFFF",
+      "textPosition": "center-center",
+      "maxTime": -1,
+      "minTime": 4000,
+      
+    }),
+    NgxUiLoaderHttpModule.forRoot({showForeground: true, 
+    }),
 
   ],
   providers: [MatSnackBarModule, authInterceptorProviders],
