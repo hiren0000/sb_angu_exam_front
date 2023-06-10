@@ -1,5 +1,6 @@
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
@@ -11,10 +12,17 @@ import Swal from 'sweetalert2';
 })
 export class QuizMainCompoComponent implements OnInit {
 
-  qId='';
+   qId='';
+  marksGot = 0;
+  correctAnswer = 0;
+  attempted = 0;
+  //givenAnswer= '';
+  givenAnswer='';
+  markSingle= 0;
 
+  timer:any;
 
-  questions = [
+  questions:any = [
 
     {
       quesId: '',
@@ -25,16 +33,22 @@ export class QuizMainCompoComponent implements OnInit {
       option3: '',
       option4:'',
       answer: '',
+      
       quiz : {
-        qId: '',
+        qId:'',
         title: '',
         description: '',
+        maxMarks: '',
+        numberOfQuestions: '', 
       }
 
     }
   ]
 
-  constructor( private route:ActivatedRoute, private locationSt:LocationStrategy, private questionSer:QuestionService) { }
+  constructor( private route:ActivatedRoute,
+     private locationSt:LocationStrategy,
+      private questionSer:QuestionService,
+      private snack:MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -44,6 +58,8 @@ export class QuizMainCompoComponent implements OnInit {
     this.qId = this.route.snapshot.params['qId'];
       //console.log(this.qId);
       this.getQuestionbyQuiz();
+
+      this.timerFunc();
 
 
       
@@ -56,6 +72,15 @@ export class QuizMainCompoComponent implements OnInit {
           next: (data:any)=>
           {
             this.questions=data;
+            this.timer = this.questions.length*2*60;
+
+           //console.log(this.givenAnswer);
+            
+
+           /* this.questions.forEach((q)=>
+            {
+              q.givenAnswer='';
+            });*/
           },
           error :(error)=>
           {
@@ -74,4 +99,85 @@ export class QuizMainCompoComponent implements OnInit {
           history.pushState(null, 'null', location.href);
         });
       }
+
+//Submitting quiz by user ----------------------------------------------------------------------------
+
+      public submitQuiz()
+      {
+        Swal.fire({
+          title: 'Do you want to submit the quiz?',
+          showCancelButton: true,
+          confirmButtonText: 'Submit',
+          denyButtonText: 'Cancel',
+          icon: 'question',
+        }).then((e) =>
+        {
+          if(e.isConfirmed)
+          {
+            console.log("Under Maintainance !!! ");
+            this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
+
+            this.evalMarsk();
+           
+            
+          }
+        });
+        
+      }
+
+//Setting timer that automatically finishes the quiz after ending the timer ---------------------------------------------------------------------------------------------------
+      timerFunc()
+      {
+       let t = window.setInterval(()=>{
+
+       
+        //coding here
+        if(this.timer <= 0)
+        {
+          this.evalMarsk();
+          clearInterval(t);
+
+        }
+        else
+        {
+          this.timer--;
+
+        }
+        
+      }, 1000);
+
+      }      
+
+//For getting formated remaining time
+      getFormatedtime()
+      {
+        let m = Math.floor(this.timer/60);
+        let s = this.timer-m*60;
+        return `${m} min: ${s}: sec`;
+        
+      }
+
+//Calculating marks--------------------------------------------------------------------------------------------------
+   //this needs to recheck and implemented properly 
+  evalMarsk()
+    {
+
+      this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
+      this.questions.forEach((e: { answer: string; }) =>
+      {
+        if(this.givenAnswer==e.answer)
+        
+        
+        {
+          console.log("Under Maintainance !!! ");
+          
+          //for this function need some help getting Airthmetic errors 
+         // this.correctAnswer++
+         //this.markSingle = this.questions[0].quiz.maxMarks/this.questions.length;
+        }
+        
+      });
+    }
+
+
 }

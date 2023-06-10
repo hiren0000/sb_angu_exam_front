@@ -41,6 +41,7 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 
 
@@ -90,6 +91,7 @@ import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-c
     MatSlideToggleModule,
     MatSelectModule, 
     CKEditorModule,
+    MatProgressSpinnerModule,
 
   ],
   providers: [MatSnackBarModule, authInterceptorProviders],

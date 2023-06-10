@@ -5,6 +5,7 @@
             <!--Instructions-->
             <h2>Instructions</h2>
         </div>
+       
         <div class="col-md-8">
             <!--Questions-->
             <ng-container *ngIf="questions">
@@ -17,22 +18,23 @@
 
                     <div class="row mt10">
                         <div class="col-md-6">
-                            <input type="radio" [value]="q.option1" [name]="i+1">
+                        <!--here when try to use ngModel name will become unknown type-->
+                            <input type="radio"  [value]="q.option1" [name]='i' > 
                             {{q.option1}}
                         </div>
                         <div class="col-md-6">
-                            <input type="radio" [value]="q.option2" [name]="i+1">
+                            <input type="radio" [value]="q.option2" [name]="i" >  
                             {{q.option2}}
                         </div>
                     </div>
 
                     <div class="row mt10">
                         <div class="col-md-6">
-                            <input type="radio" [value]="q.option3" [name]="i+1">
+                            <input type="radio" [value]="q.option3" [name]="i"  >
                             {{q.option3}}
                         </div>
                         <div class="col-md-6">
-                        <input type="radio" [value]="q.option4" [name]="i+1">
+                        <input type="radio" [value]="q.option4" [name]="i" >
                         {{q.option4}}
                         </div>
                     </div>
@@ -41,12 +43,19 @@
             </mat-card>
 
             <div class="container text-center mt10 mb10">
-                <button mat-raised-button color="primary">Finish</button>
+                <button mat-raised-button color="primary" (click)="submitQuiz()">Finish</button>
             </div>
 
         </div>
         <div class="col-md-2">
             <h2>Remainig Time</h2>
+            <mat-card class="mt20">
+                <mat-card-content>
+                    <h1>{{ getFormatedtime() }}</h1>
+                    <mat-spinner  color="warn" style="margin:auto" class="mt10"></mat-spinner>
+                </mat-card-content>
+            </mat-card>
+
         </div>
         </div>
     </div>
