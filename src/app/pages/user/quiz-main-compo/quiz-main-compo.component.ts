@@ -16,8 +16,8 @@ export class QuizMainCompoComponent implements OnInit {
   marksGot = 0;
   correctAnswer = 0;
   attempted = 0;
-  //givenAnswer= '';
-  givenAnswer='';
+  
+
   markSingle= 0;
 
   timer:any;
@@ -33,6 +33,7 @@ export class QuizMainCompoComponent implements OnInit {
       option3: '',
       option4:'',
       answer: '',
+      givenAnswer: '',
       
       quiz : {
         qId:'',
@@ -72,8 +73,11 @@ export class QuizMainCompoComponent implements OnInit {
           next: (data:any)=>
           {
             this.questions=data;
-            this.timer = this.questions.length*2*60;
-
+            console.log(this.questions);
+            
+            this.timer = this.questions.length*60;
+            console.log(this.questions.givenAnswer);
+            
            //console.log(this.givenAnswer);
             
 
@@ -84,6 +88,7 @@ export class QuizMainCompoComponent implements OnInit {
           },
           error :(error)=>
           {
+            console.log(error);          
             Swal.fire('Error', 'Something wrong with server !!', 'error');
           }
           
@@ -162,21 +167,8 @@ export class QuizMainCompoComponent implements OnInit {
   evalMarsk()
     {
 
-      this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
-      this.questions.forEach((e: { answer: string; }) =>
-      {
-        if(this.givenAnswer==e.answer)
-        
-        
-        {
-          console.log("Under Maintainance !!! ");
-          
-          //for this function need some help getting Airthmetic errors 
-         // this.correctAnswer++
-         //this.markSingle = this.questions[0].quiz.maxMarks/this.questions.length;
-        }
-        
-      });
+      this.snack.open('This Function is Under Maintainance, will be sorted soon !!', 'ok');
+  
     }
 
 
