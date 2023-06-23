@@ -1,6 +1,6 @@
 # ExamportalFront
 
-This is the Front End of the Exam-Portal
+This is the Front End of the Exam Portal developed using Angular.
 
 ## Development server
 
@@ -10,9 +10,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Register, Login, Categories, Quizzes, Questions
 
-## Build
+## Securities at the Front side
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Interceptor for sending Authorization token with every single HTTP request, Auth guard would not allow anyone to access the secured pages, used two different guards one for the Admin and another for a normal user, If they are login and matches the criteria then only secured pages will be accessible 
 
 ## Ang-Exa-SB
 
@@ -20,13 +20,13 @@ have Role based authentications,
 
 ## Admin 
 
-do crud operations to Cat, Quiz, Questions Models
+can do CRUD operations to Categories, Quizzes, and Questions Models
 
-very well desgined and also implemented proper navigations
+very well designed and also implemented proper navigations
 
 ## Normal-User
 
-can take a part in quiz game where needs to finis quesitons within limited time, and can get their result
+can take part in quiz game where needs to finish questions within a limited time, and can get their result
 
 
 
