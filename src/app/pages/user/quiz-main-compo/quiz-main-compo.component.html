@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
     <div class="container-fluid">
         <div class="row">
         <div class="col-md-2">
@@ -19,22 +19,24 @@
                     <div class="row mt10">
                         <div class="col-md-6">
                         <!--here when try to use ngModel name will become unknown type-->
-                            <input type="radio"  [value]="q.option1" [name]='i' > 
+                            <input type="radio"  [value]="q.option1" name="option1+'{{i}}'"  [(ngModel)]="q.givenAnswer" > 
                             {{q.option1}}
                         </div>
                         <div class="col-md-6">
-                            <input type="radio" [value]="q.option2" [name]="i" >  
+                            <input type="radio" [value]="q.option2"  name="option2+'{{i}}'"  [(ngModel)]="q.givenAnswer" >  
                             {{q.option2}}
                         </div>
                     </div>
 
+                    <!--name variabel help us to set the value of selected option into the givenAnswer variable   -->
+
                     <div class="row mt10">
                         <div class="col-md-6">
-                            <input type="radio" [value]="q.option3" [name]="i"  >
+                            <input type="radio" [value]="q.option3" name ="option3+'{{i}}'"  [(ngModel)]="q.givenAnswer" >
                             {{q.option3}}
                         </div>
                         <div class="col-md-6">
-                        <input type="radio" [value]="q.option4" [name]="i" >
+                        <input type="radio" [value]="q.option4" name="option4+'{{i}}'" [(ngModel)]="q.givenAnswer" >
                         {{q.option4}}
                         </div>
                     </div>
@@ -57,6 +59,32 @@
             </mat-card>
 
         </div>
+        </div>
+    </div>
+</div>
+
+<!-- showing the Quiz result::: we can add some designing to our page  -->
+<!-- Here we can also user's details  -->
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <div class="row mt10">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Quiz Result
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="mt10">
+                    <h1>Total Marks Got: {{totalMarks}}</h1>
+                    <h1>Correct Answers: {{correctAns}}</h1>
+                    <h1>Attempted Questions: {{attemptedQue}}</h1>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-action-list class="text-center">
+                    <button (click)="printPage()" mat-raised-button color="primary">Print</button>
+                    <button style="margin-left: 10px;" routerLink="/user-dash/0" mat-raised-button color="primary">Home</button>
+                </mat-action-list>
+            </mat-card>
         </div>
     </div>
 </div>

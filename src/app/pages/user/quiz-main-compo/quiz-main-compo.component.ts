@@ -13,12 +13,14 @@ import Swal from 'sweetalert2';
 export class QuizMainCompoComponent implements OnInit {
 
    qId='';
-  marksGot = 0;
-  correctAnswer = 0;
-  attempted = 0;
-  //givenAnswer= '';
-  givenAnswer='';
-  markSingle= 0;
+  
+  
+  totalMarks = 0;
+  correctAns = 0;
+  attemptedQue = 0;
+  
+  
+   isSubmit = false;
 
   timer:any;
 
@@ -33,6 +35,7 @@ export class QuizMainCompoComponent implements OnInit {
       option3: '',
       option4:'',
       answer: '',
+      givenAnswer: '',
       
       quiz : {
         qId:'',
@@ -72,8 +75,11 @@ export class QuizMainCompoComponent implements OnInit {
           next: (data:any)=>
           {
             this.questions=data;
-            this.timer = this.questions.length*2*60;
-
+            console.log(this.questions);
+            
+            this.timer = this.questions.length*60;
+            console.log(this.questions.givenAnswer);
+            
            //console.log(this.givenAnswer);
             
 
@@ -84,6 +90,7 @@ export class QuizMainCompoComponent implements OnInit {
           },
           error :(error)=>
           {
+            console.log(error);          
             Swal.fire('Error', 'Something wrong with server !!', 'error');
           }
           
@@ -104,6 +111,9 @@ export class QuizMainCompoComponent implements OnInit {
 
       public submitQuiz()
       {
+
+        this.isSubmit = true;
+
         Swal.fire({
           title: 'Do you want to submit the quiz?',
           showCancelButton: true,
@@ -114,8 +124,8 @@ export class QuizMainCompoComponent implements OnInit {
         {
           if(e.isConfirmed)
           {
-            console.log("Under Maintainance !!! ");
-            this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
+            // console.log("Under Maintainance !!! ");
+            // this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
 
             this.evalMarsk();
            
@@ -162,22 +172,33 @@ export class QuizMainCompoComponent implements OnInit {
   evalMarsk()
     {
 
-      this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
-      this.questions.forEach((e: { answer: string; }) =>
-      {
-        if(this.givenAnswer==e.answer)
-        
-        
+      this.questionSer.calculatingMarks(this.questions).subscribe({
+        next: (respons:any)=>
         {
-          console.log("Under Maintainance !!! ");
+          console.log(respons);
+         this.totalMarks = respons.gotTotalMarks;
+         this.correctAns =respons.correct;
+         this.attemptedQue = respons.attemptQuestions;
+         
+         //once the give time will complete it will redirct user to the result--------------
+         this.isSubmit=true;
           
-          //for this function need some help getting Airthmetic errors 
-         // this.correctAnswer++
-         //this.markSingle = this.questions[0].quiz.maxMarks/this.questions.length;
+        },
+       error: (error)=>
+        {
+          console.log(error);
+          Swal.fire('Error', 'Something went wrong with serverside !!', 'error');
         }
-        
-      });
+    });
+      //this.snack.open('This Function is Under Maintainance, will be sorted soon !!', 'ok');
+  
     }
+
+//Printing whole page     
+   printPage()
+   {
+    window.print();
+   } 
 
 
 }
