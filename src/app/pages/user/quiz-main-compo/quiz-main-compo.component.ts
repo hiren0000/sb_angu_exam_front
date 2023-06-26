@@ -13,12 +13,14 @@ import Swal from 'sweetalert2';
 export class QuizMainCompoComponent implements OnInit {
 
    qId='';
-  marksGot = 0;
-  correctAnswer = 0;
-  attempted = 0;
   
-
-  markSingle= 0;
+  
+  totalMarks = 0;
+  correctAns = 0;
+  attemptedQue = 0;
+  
+  
+   isSubmit = false;
 
   timer:any;
 
@@ -109,6 +111,9 @@ export class QuizMainCompoComponent implements OnInit {
 
       public submitQuiz()
       {
+
+        this.isSubmit = true;
+
         Swal.fire({
           title: 'Do you want to submit the quiz?',
           showCancelButton: true,
@@ -119,8 +124,8 @@ export class QuizMainCompoComponent implements OnInit {
         {
           if(e.isConfirmed)
           {
-            console.log("Under Maintainance !!! ");
-            this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
+            // console.log("Under Maintainance !!! ");
+            // this.snack.open('This Function is Under Maintainance, will be workign soon !!', 'ok');
 
             this.evalMarsk();
            
@@ -167,9 +172,33 @@ export class QuizMainCompoComponent implements OnInit {
   evalMarsk()
     {
 
-      this.snack.open('This Function is Under Maintainance, will be sorted soon !!', 'ok');
+      this.questionSer.calculatingMarks(this.questions).subscribe({
+        next: (respons:any)=>
+        {
+          console.log(respons);
+         this.totalMarks = respons.gotTotalMarks;
+         this.correctAns =respons.correct;
+         this.attemptedQue = respons.attemptQuestions;
+         
+         //once the give time will complete it will redirct user to the result--------------
+         this.isSubmit=true;
+          
+        },
+       error: (error)=>
+        {
+          console.log(error);
+          Swal.fire('Error', 'Something went wrong with serverside !!', 'error');
+        }
+    });
+      //this.snack.open('This Function is Under Maintainance, will be sorted soon !!', 'ok');
   
     }
+
+//Printing whole page     
+   printPage()
+   {
+    window.print();
+   } 
 
 
 }

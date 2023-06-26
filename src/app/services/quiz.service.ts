@@ -58,4 +58,6 @@ export class QuizService {
     return this.http.get(`${baseUrl}/api/v1/quiz/category/active/${cId}`);
   }
 
+ 
+
 }

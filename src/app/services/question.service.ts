@@ -44,4 +44,11 @@ public getSingleQuestion(quesId:any)
 {
   return this.http.get(`${baseUrl}/api/v1/question/${quesId}`);
 }
+
+ //Sending all the questions with chose answers
+ public calculatingMarks(questions:any)
+ {
+   return this.http.post(`${baseUrl}/api/v1/question/eval-quiz`, questions);
+ }
+
 }
