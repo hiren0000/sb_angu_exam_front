@@ -21,6 +21,9 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
+
 
 
 const routes: Routes = [
@@ -100,10 +103,22 @@ const routes: Routes = [
   canActivate: [NormalGuard],
   children : [
     {
-      path: ':cId',
+      path: '',
+      component: UserWelcomeComponent,
+
+    },
+
+    {
+      path: 'category/:cId',
       component: LoadQuizComponent,
 
     },
+
+    {
+      path:'user-profile',
+      component: UserProfileComponent,
+    },
+
     {
       path: 'quiz-instruction/:qId',
       component: InstructionsComponent,

@@ -43,6 +43,8 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 
 
 
@@ -73,6 +75,8 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
     LoadQuizComponent,
     InstructionsComponent,
     QuizMainCompoComponent,
+    UserProfileComponent,
+    UserWelcomeComponent,
   ],
   
   imports: [

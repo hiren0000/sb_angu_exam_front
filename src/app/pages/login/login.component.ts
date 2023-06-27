@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
             {
               //NORMAL-DASH
               //window.location.href='/user-dashboard'
-              this.router.navigate(['user-dash/0']);
+              this.router.navigate(['user-dash']);
             }
             else
             {
