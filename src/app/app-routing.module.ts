@@ -23,6 +23,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { QuizMainCompoComponent } from './pages/user/quiz-main-compo/quiz-main-compo.component';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
+import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 
 
 
@@ -122,6 +123,11 @@ const routes: Routes = [
     {
       path: 'quiz-instruction/:qId',
       component: InstructionsComponent,
+    },
+
+    {
+      path: 'update-user/:id',
+      component: UpdateUserComponent,
     },
     
   ],
