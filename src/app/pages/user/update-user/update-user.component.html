@@ -1,0 +1,72 @@
+
+
+    <div class="container"  style="margin-top: 20px;">
+       
+              <mat-card>
+                    <div class="container text-center">
+                        <!--<img src="../../../assets/register.png" alt=""> -->
+                    </div>
+                    <h1 class="text-center">Update Here!!</h1>
+                    <!--{{user | json }}   -->
+                    
+<!---------------------------Update Form-------------------------------------------------------------------------->
+               
+
+                    <form (ngSubmit)="updateForm()">
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>UserName</mat-label>
+                            <input required name="userName" matInput placeholder="UserName*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>FirstName</mat-label>
+                            <input required   name="firstName" matInput placeholder="FirstName*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>LastName</mat-label>
+                            <input required name="lastName" matInput placeholder="LastName*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Create Password</mat-label>
+                            <input required name="password" type="password" matInput placeholder="password*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input required name="email" type="email" matInput placeholder="email*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input required type="tel"  name="phone" matInput placeholder="Phone number*">
+                            <mat-icon matSuffix>phone</mat-icon>
+                            <mat-hint>please include your area code</mat-hint>                            
+                        </mat-form-field>
+
+                         <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Profile</mat-label>
+                            <input required name="profile" type="text" matInput placeholder="profile*">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>                            
+                        </mat-form-field>
+                        
+                        
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" >Update</button>
+                            <button type="reset" mat-raised-button color="accent" style="margin-left: 20px;">Reset</button>
+
+                        </div>
+
+
+                    </form>
+                </mat-card>
+        </div>
+    
+
