@@ -1,4 +1,4 @@
-# ExamportalFront
+# Exam-Portal-Front
 
 This is the Front End of the Exam Portal developed using Angular.
 
