@@ -1,0 +1,23 @@
+/* .land-img
+{
+    background-image: url("/src/assets/images-exam/exam1.jpg");
+   
+} */
+
+
+.land-img
+{
+    width: 100%;
+    height: 100%;
+   
+   
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 5px;
+}
+
+.example-disabled {
+  display: inline-block;
+}
