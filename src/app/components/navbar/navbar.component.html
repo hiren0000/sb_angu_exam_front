@@ -1,13 +1,18 @@
 <p>
     <mat-toolbar color="primary">
+ 
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
       <span><a [routerLink]="['']">Exam-Portal</a></span>
       <span class="example-spacer"></span>
-      <button  mat-flat-button color="pink" *ngIf="!loginServ.isLoggedIn()"><a [routerLink]="['signup']">Singup</a></button>
-      <button  mat-flat-button color="pink" *ngIf="!loginServ.isLoggedIn()"><a [routerLink]="['login']">Login</a></button>
-      <button mat-flat-button color="pink"  (click)="logout()" *ngIf="loginServ.isLoggedIn()">Logout</button>
-      <button mat-flat-button color="pink" *ngIf="loginServ.isLoggedIn()">{{loginServ.getUser().firstName}}</button>
+      <button  mat-flat-button class="button-exa" *ngIf="!loginServ.isLoggedIn()"  routerLink="signup">Singup</button>
+      <button  mat-flat-button class="button-exa" *ngIf="!loginServ.isLoggedIn()"  routerLink="login">Login</button>
+      <button mat-flat-button  class="button-exa" (click)="logout()" *ngIf="loginServ.isLoggedIn()">Logout</button>
+      <button mat-flat-button class="button-exa" *ngIf="loginServ.isLoggedIn()">{{loginServ.getUser().firstName}}</button>
+     
+
+     
+    
     </mat-toolbar>
   </p>

@@ -1,4 +1,31 @@
 <app-navbar></app-navbar>
+<!-- IF Normal user comes to home this will hel them to nivigate to the User-dash-board -->
+<p *ngIf="login.isLoggedIn() == true && login.getUserRole() == 'NORMAL'">
+<mat-toolbar color="accent"   >
+    <span>Let's go back to User-dash-board</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerLink="/user-dash" class="example-icon"><mat-icon >home</mat-icon></button>
+    <button mat-icon-button routerLink="/user-dash/user-profile" class="example-icon"><mat-icon >account_circle</mat-icon></button>
+    <button mat-icon-button routerLink="/user-dash/category/0" class="example-icon"><mat-icon >quiz</mat-icon></button>
+    
+  </mat-toolbar>
+  </p>
+  <!--  -->
+
+  <p *ngIf="login.isLoggedIn() == true && login.getUserRole() == 'ADMIN'">
+    <mat-toolbar color="accent"   >
+        <span>Let's go back to ADMIN-dash-board</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button routerLink="/admin-dash/"><mat-icon >home</mat-icon></button>
+        <button mat-icon-button routerLink="/admin-dash/profile"><mat-icon >account_circle</mat-icon></button>
+        <button mat-icon-button routerLink="/admin-dash/categories"><mat-icon >list</mat-icon></button>
+        <button mat-icon-button routerLink="/admin-dash/quizzes"><mat-icon >quiz</mat-icon></button>
+        
+      </mat-toolbar>
+      </p>
+  
+      <!-- ------------------------------------------------------------------------------------------------- -->
+
 <div class="bootstrap-wrapper">
     <div class="container-fluid text-center">
 <h1>Welcome to Exam-Portal</h1>
