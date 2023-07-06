@@ -1,3 +1,16 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  
+
+  span a{
+    background-color: yellow;
+  }
+
+
+  .button-exa
+  {
+    color: yellow;
+    margin-left: 10px;
+  }
